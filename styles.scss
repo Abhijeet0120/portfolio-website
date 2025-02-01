@@ -1,0 +1,142 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variables */
+:root {
+  --primary-color: #007bff;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Header */
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Navbar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav__menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav__item {
+  margin: 0 15px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: var(--primary-color);
+}
+
+/* Mobile Navigation */
+.nav__toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav__menu.show {
+    display: flex;
+  }
+
+  .nav__item {
+    margin: 15px 0;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 80px 10%;
+}
+
+.home__data {
+  max-width: 500px;
+}
+
+.home__title {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: bold;
+}
+
+.home__description {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  margin-top: 10px;
+}
+
+.home__social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.home__social-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: transform 0.3s;
+}
+
+.home__social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+}
